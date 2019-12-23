@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flex 布局练习</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <h2>Flex 布局</h2>
+  <div class="box">
+    <span class="item">1</span>
+    <span class="item">2</span>
+    <span class="item">3</span>
+  </div>
+  <hr>
+  <h2>容器的属性</h2>
+  <h3>1、flex-direction 示例</h3>
+  <span class="select-item" id="direction_1">flex-direction: </span>
+  <select onchange="changeBox1FlexDirection()" id="flex_direction">
+    <option value="row">row(default)</option>
+    <option value="row-reverse">row-reverse</option>
+    <option value="column">column</option>
+    <option value="column-reverse">column-reverse</option>
+  </select>
+  <div id="box_1" class="box box-1">
+  </div>
+  <hr>
+  <h3>2、flex-wrap 示例</h3>
+  <span class="select-item">flex-wrap: </span>
+  <select onchange="changeBox2Wrap()" id="flex_wrap">
+    <option value="nowrap">nowrap(default)</option>
+    <option value="wrap">wrap</option>
+    <option value="wrap-reverse">wrap-reverse</option>
+  </select>
+  <div id="box_2" class="box box-2">
+  </div>
+  <hr>
+  <h3>3、flex-flow 示例</h3>
+  <span class="select-item">flex-flow: </span>
+  <select onchange="changeBox3Direction()" id="flex_flow_direction">
+    <option value="row">row(default)</option>
+    <option value="row-reverse">row-reverse</option>
+    <option value="column">column</option>
+    <option value="column-reverse">column-reverse</option>
+  </select>
+  <select onchange="changeBox3Wrap()" id="flex_flow_wrap">
+    <option value="nowrap">nowrap(default)</option>
+    <option value="wrap">wrap</option>
+    <option value="wrap-reverse">wrap-reverse</option>
+  </select>
+  <div id="box_3" class="box box-3">
+  </div>
+  <hr>
+  <h3>4、justify-content 示例</h3>
+  <span class="select-item">justify-cotent: </span>
+  <select onchange="changeBox4()" id="justify_cotent">
+    <option value="flex-start">flex_start(default)</option>
+    <option value="flex-end">flex-end</option>
+    <option value="center">center</option>
+    <option value="space-between">space-between</option>
+    <option value="space-around">space-around</option>
+  </select>
+  <div id="box_4" class="box box-4">
+  </div>
+  <hr>
+  <h3>5、align-items 示例</h3>
+  <span class="select-item">align-items: </span>
+  <select onchange="changeBox5()" id="align_items">
+    <option value="stretch">stretch(default)</option>
+    <option value="flex-start">flex-start</option>
+    <option value="flex-end">flex-end</option>
+    <option value="center">center</option>
+    <option value="baseline">baseline</option>
+  </select>
+  <div id="box_5" class="box box-5">
+  </div>
+  <hr>
+  <h3>6、align-content 示例</h3>
+  <span class="select-item">align-content: </span>
+  <select onchange="changeBox6()" id="align_content">
+    <option value="stretch">stretch(default)</option>
+    <option value="flex-start">flex-start</option>
+    <option value="flex-end">flex-end</option>
+    <option value="center">center</option>
+    <option value="space-between">space-between</option>
+    <option value="space-around">space-around</option>
+  </select>
+  <div id="box_6" class="box box-6">
+  </div>
+  <hr>
+  <h2>item 的属性</h2>
+  <h3>1. order 示例</h3>
+  <div id="box_7" class="box">
+  </div>
+  <hr>
+  <h3>2. flex-grow 示例</h3>
+  <div id="box_8" class="box">
+    <span id="grow_item_1" class="item">1
+      <span class="select-item">
+        <select id="grow_sel_1" onchange='changeGrowVal("grow_sel_1", "grow_item_1")'>
+          <option value=0>0 (default)</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>4</option>
+          <option value=5>5</option>
+        </select>
+      </span>
+    </span>
+    <span id="grow_item_2" class="item">
+      <span class="select-item">2
+        <select id="grow_sel_2" onchange='changeGrowVal("grow_sel_2", "grow_item_2")'>
+          <option value=0>0 (default)</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>4</option>
+          <option value=5>5</option>
+        </select>
+      </span>
+    </span>
+    <span id="grow_item_3" class="item">
+      <span class="select-item">3
+        <select id="grow_sel_3" onchange='changeGrowVal("grow_sel_3", "grow_item_3")'>
+          <option value=0>0 (default)</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>4</option>
+          <option value=5>5</option>
+        </select>
+      </span>
+    </span>
+    <span id="grow_item_4" class="item">
+      <span class="select-item">4
+        <select id="grow_sel_4" onchange='changeGrowVal("grow_sel_4", "grow_item_4")'>
+          <option value=0>0 (default)</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+      </span>
+    </span>
+  </div>
+  <hr>
+  <h3>3. flex-shrink 示例</h3>
+  <div id="box_9" class="box box-9">
+    <span id="shrink_item_1" class="item">
+      <span class="select-item">1
+        <select id="shrink_sel_1" onchange='changeShrinkVal("shrink_sel_1", "shrink_item_1")'>
+          <option value=1>1 (default)</option>
+          <option value=0>0</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+        </select>
+      </span>
+    </span>
+    <span id="shrink_item_2" class="item">
+      <span class="select-item">2
+        <select id="shrink_sel_2" onchange='changeShrinkVal("shrink_sel_2", "shrink_item_2")'>
+          <option value=1>1 (default)</option>
+          <option value=0>0</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+        </select>
+      </span>
+    </span>
+    <span id="shrink_item_3" class="item">
+      <span class="select-item">3
+        <select id="shrink_sel_3" onchange='changeShrinkVal("shrink_sel_3", "shrink_item_3")'>
+          <option value=1>1 (default)</option>
+          <option value=0>0</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+        </select>
+      </span>
+    </span>
+  </div>
+  <hr>
+  <h3>4. flex-basis 示例</h3>
+  <div id="box_10" class="box box-10">
+    <span id="basis_item_1" class="basis-item">1 
+      <select id="basis_select_1" onchange='changeBasisBal("basis_select_1", "basis_item_1")'>
+        <option value="auto">auto (default)</option>
+        <option value="300px">300px</option>
+        <option value="400px">400px</option>
+      </select>
+    </span>
+    <span id="basis_item_2" class="basis-item">2 
+      <select id="basis_select_2" onchange='changeBasisBal("basis_select_2", "basis_item_2")'>
+        <option value="auto">auto (default)</option>
+        <option value="300px">300px</option>
+        <option value="400px">400px</option>
+      </select>
+    </span>
+    <span id="basis_item_3" class="basis-item basis-item-2">3 固定大小 
+      <select id="basis_select_3" onchange='changeBasisBal("basis_select_3", "basis_item_3")'>
+        <option value="auto">auto (default)</option>
+        <option value="300px">300px</option>
+        <option value="400px">400px</option>
+      </select>
+    </span>
+  </div>
+  <hr>
+  <h3>5. align-self 示例</h3>
+  <div id="box_11" class="box box-11">
+    <span id="self_item_1" class="item">1</span>
+    <span id="self_item_2" class="item">2</span>
+    <span id="self_item_3" class="item self-item">3 
+      <select id="self_select" onchange='changeSelfBal()'>
+        <option value="auto">auto (default)</option>
+        <option value="stretch">stretch (no parent element)</option>
+        <option value="flex-start">flex-start</option>
+        <option value="flex-end">flex-end</option>
+        <option value="center">center</option>
+        <option value="baseline">baseline</option>
+      </select>
+    </span>
+  </div>
+
+</body>
+<script>
+  createSimpleItem('box_1', 3);
+  createSimpleItem('box_2', 12);
+  createSimpleItem('box_3', 12);
+  createSimpleItem('box_4', 4);
+  createSimpleItem('box_5', 4);
+  createSimpleItem('box_6', 18);
+  createOrderItem(6);
+
+  function changeSelfBal() {
+    document.getElementById("self_item_3").style.alignSelf = document.getElementById("self_select").value;
+  }
+  function changeBasisBal(id, itemId) {
+    document.getElementById(itemId).style.flexBasis = document.getElementById(id).value;
+  }
+
+  function changeShrinkVal(id, itemId) {
+    document.getElementById(itemId).style.flexShrink = document.getElementById(id).value;
+  }
+
+  function changeGrowVal(id, itemId) {
+    document.getElementById(itemId).style.flexGrow = document.getElementById(id).value;
+  }
+
+  function changeOrderNo(id) {
+    let aa = document.getElementById("order_item_input_" + id).value;
+    document.getElementById("order_item_" + id).style.order = Number(document.getElementById("order_item_input_" + id).value);
+  }
+
+  function createOrderItem(num) {
+    let items = "";
+    for (let i = 1; i < num + 1; i++) {
+      let inp = '<input style="max-width: 60px;" id="order_item_input_' + i + '" onchange="changeOrderNo(' + i + ')" />'
+      items += '<span id="order_item_' + i + '" class="item">' + i + '  ' + inp + '</span>';
+    }
+    document.getElementById("box_7").innerHTML = items;
+  }
+  function createSimpleItem(id, num) {
+    let items = "";
+    for (let i = 1; i < num + 1; i++) {
+      if (id === "box_5" && i === 1) {
+        items += '<span class="item"></span>';
+      }
+      items += '<span class="item">' + i + '</span>';
+    }
+    document.getElementById(id).innerHTML = items;
+  }
+  function changeBox1FlexDirection() {
+    document.getElementById("box_1").style.flexDirection = document.getElementById("flex_direction").value;
+  }
+
+  function changeBox2Wrap() {
+    document.getElementById("box_2").style.flexWrap = document.getElementById("flex_wrap").value;
+  }
+
+  function changeBox3Direction() {
+    document.getElementById("box_3").style.flexDirection = document.getElementById("flex_flow_direction").value;
+  }
+
+  function changeBox3Wrap() {
+    document.getElementById("box_3").style.flexWrap = document.getElementById("flex_flow_wrap").value;
+  }
+  function changeBox4() {
+    document.getElementById("box_4").style.justifyContent = document.getElementById("justify_cotent").value;
+  }
+  function changeBox5() {
+    document.getElementById("box_5").style.alignItems = document.getElementById("align_items").value;
+  }
+  function changeBox6() {
+    document.getElementById("box_6").style.alignContent = document.getElementById("align_content").value;
+  }
+</script>
+
+</html>

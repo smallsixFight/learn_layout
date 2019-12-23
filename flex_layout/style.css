@@ -1,0 +1,83 @@
+.box {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.box-1 {
+  flex-direction: row;
+}
+
+.box-2 {
+  flex-wrap: nowrap;
+}
+
+.box-3 {
+  flex-flow: row nowrap;
+}
+
+.box-4 {
+  justify-content: flex-start;
+}
+
+.box-5 {
+  align-items: stretch;
+  height: 300px;
+}
+
+.box-6 {
+  background-color: darksalmon;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 300px;
+}
+
+.box-9 {
+  width: 600px; 
+  background-color: darksalmon;
+  margin: 5px;
+}
+
+.box-10 {
+  width: 800px;
+  background-color: darksalmon;
+}
+
+.box-11 {
+  width: 800px;
+  height: 200px;
+  background-color: darksalmon;
+}
+
+
+
+.basis-item {
+  background-color: bisque;
+  margin: 5px;
+}
+
+.basis-item-2 {
+  width: 280px;
+}
+
+.item {
+  background-color: bisque;
+  margin: 5px;
+  width: 200px;
+  min-height: 40px;
+  text-align: center;
+  font-size: 24pt;
+}
+
+.self-item {
+  width: 300px;
+}
+
+select {
+  min-width: 140px;
+  margin-bottom: 14px;
+  font-size: 20px;
+}
+
+.select-item {
+  font-size: 24px;
+}
